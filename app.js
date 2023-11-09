@@ -30,5 +30,21 @@ click_button.addEventListener('click', function() {
    	let image_data_url = canvas.toDataURL('image/jpeg');
 
    	// data url of the image
-   	console.log(image_data_url);
+   	//console.log(image_data_url);
 });
+
+const x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  
